@@ -1,0 +1,10 @@
+{
+  "Contracts/PropertyLease.sol": {
+    "__sources__": {
+      "Contracts/PropertyLease.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.19;\r\n\r\n// 2. Contract Definition: The main building block, similar to a class in object-oriented programming.\r\ncontract PropertyLease {\r\n\r\n    // --- STRUCTS ---\r\n    // 3. Structs allow you to create custom data types. \r\n    // Here we bundle all the attributes that make up a single lease agreement.\r\n    struct Lease {\r\n        address tenantAddress;       // The Web3 wallet address of the tenant\r\n        uint256 rentAmount;          // The monthly rent cost (stored in Wei)\r\n        uint256 securityDeposit;     // The initial deposit required (stored in Wei)\r\n        uint256 nextPaymentDueDate;  // A Unix timestamp representing when the next payment is required\r\n        bool isActive;               // A simple true/false flag to check if the lease is currently valid\r\n    }\r\n\r\n    // --- STATE VARIABLES ---\r\n    // 4. Mappings act like hash tables or dictionaries.\r\n    // This mapping takes a unique property ID (a uint256 number) and returns the corresponding Lease struct.\r\n    // Making it 'public' automatically generates a getter function so we can easily look up lease details.\r\n    mapping(uint256 => Lease) public propertyLeases;\r\n\r\n}",
+        "file": "Contracts/PropertyLease.sol"
+      }
+    }
+  }
+}
