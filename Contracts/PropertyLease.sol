@@ -22,4 +22,36 @@ contract PropertyLease {
     // Making it 'public' automatically generates a getter function so we can easily look up lease details.
     mapping(uint256 => Lease) public propertyLeases;
 
+    // --- ADDITIONAL STATE VARIABLES ---
+    // 5. Store the deployer's address to establish the landlord.
+    address public owner; 
+
+    // --- EVENTS ---
+    // 6. Events allow light clients (like frontends) to listen for changes on the blockchain efficiently.
+    event LeaseCreated(uint256 indexed propertyId, address indexed tenant);
+
+    // --- CONSTRUCTOR ---
+    // 7. The constructor runs exactly once during contract deployment.
+    constructor() {
+        // msg.sender is a globally available variable in Solidity representing the address calling the function.
+        // Here, it sets whoever deploys the contract as the landlord.
+        owner = msg.sender; 
+    }
+
+    // --- MODIFIERS ---
+    // 8. Modifiers act as reusable security checks that you can attach to various functions.
+    
+    // This modifier restricts function access to only the landlord.
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Access Denied: Caller is not the landlord");
+        // The underscore tells Solidity to return to the function and execute the rest of the code.
+        _; 
+    }
+
+    // This modifier restricts function access to only the specific tenant of a given property.
+    modifier onlyTenant(uint256 _propertyId) {
+        require(msg.sender == propertyLeases[_propertyId].tenantAddress, "Access Denied: Caller is not the tenant");
+        _;
+    }
+
 }
