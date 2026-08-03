@@ -30,6 +30,34 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_tenantAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_rentAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_securityDeposit",
+						"type": "uint256"
+					}
+				],
+				"name": "createLease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -110,11 +138,11 @@
 	},
 	"sources": {
 		"Contracts/PropertyLease.sol": {
-			"keccak256": "0x5817c5c50de920eec0daaf55999ba5e3c19ed79a762a97719ca29282771c857c",
+			"keccak256": "0x8ae69a04112c2ba23642377f567a17e6b458015574d7b25a1d1c8f9702e53fc0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b24fc3d35a0f5f984d809802d2a6eba87460844137763a106a26c875f53795ed",
-				"dweb:/ipfs/QmWaxoMNZUSJFKTwj4zdbUyuRMuQRbRWqXcz8LJS53HYff"
+				"bzz-raw://47215e1e9d3d400b7d28ec9d32e715ccbf97e314602095db0086741e31f69474",
+				"dweb:/ipfs/QmXD3Yrq7VxJFRpDHr87U1Ru26PyxyXVSCMEd48ZF8dn4E"
 			]
 		}
 	},

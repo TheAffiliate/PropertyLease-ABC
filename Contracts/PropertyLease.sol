@@ -54,4 +54,34 @@ contract PropertyLease {
         _;
     }
 
+    // --- CORE FUNCTIONS ---
+    
+    // 9. Creating the Lease: This function allows the landlord to set up a new agreement.
+    // It requires the property ID, tenant's wallet address, rent cost, and deposit amount.
+    // We attach the 'onlyOwner' modifier so ONLY the deployer (landlord) can execute this.
+    function createLease(
+        uint256 _propertyId, 
+        address _tenantAddress, 
+        uint256 _rentAmount, 
+        uint256 _securityDeposit
+    ) public onlyOwner {
+        
+        // Safety Check: Ensure a lease doesn't already exist for this property ID to prevent accidental overwriting.
+        require(!propertyLeases[_propertyId].isActive, "Error: An active lease already exists for this property");
+
+        // Populate the Lease struct and save it to the mapping under the provided _propertyId.
+        propertyLeases[_propertyId] = Lease({
+            tenantAddress: _tenantAddress,
+            rentAmount: _rentAmount,
+            securityDeposit: _securityDeposit,
+            // block.timestamp is a global variable for the current time. 
+            // We set the initial payment due date to the exact moment the lease is created.
+            nextPaymentDueDate: block.timestamp, 
+            isActive: true
+        });
+
+        // Emit the event to create a searchable log on the blockchain
+        emit LeaseCreated(_propertyId, _tenantAddress);
+    }
+
 }
