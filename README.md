@@ -1,50 +1,34 @@
-# Remix IDE Blank Template
+# Decentralized Property Lease & Escrow System
 
-Welcome to your new **Remix IDE Blank Workspace**!
+A Web3 real estate portfolio and escrow management system built as a technical deliverable for the **Africa's Blockchain Club (ABC)** entry assessment. 
 
-This workspace has been generated using the "Blank Template" option in Remix IDE. It starts with only minimal configuration files, giving you full control to build your project from scratch.
+This project demonstrates a scalable approach to decentralized tenancy agreements, utilizing the Factory pattern to allow multiple landlords to deploy and manage isolated property portfolios on the blockchain.
 
----
+## 🏗️ Smart Contract Architecture
 
-## What's Included?
+The system is composed of two primary contracts:
 
-- **`remix.config.json`**: Default Remix IDE workspace configuration.
-- **`.prettierrc.json`**: Basic Prettier formatting rules for code consistency.
+1. **`LeaseFactory.sol` (The Orchestrator)**
+   - Acts as a decentralized factory for deploying new lease portfolios.
+   - Allows any user (landlord) to initialize their own independent `PropertyLease` contract.
+   - Maps and tracks deployed portfolios securely to the deploying wallet address.
 
-No contract files, folders, or sample code are included.
+2. **`PropertyLease.sol` (The Core Logic)**
+   - Manages the state, financial routing, and time-based mechanics of individual leases.
+   - Handles the secure escrow of Ethereum-based security deposits.
+   - Tracks monthly rent payments and automatically increments payment due dates.
 
----
+## 🔒 Key Features & Technical Implementations
 
-## Getting Started
+- **Role-Based Access Control (RBAC):** Custom `onlyOwner` and `onlyTenant` modifiers ensure that only authorized wallets can interact with specific state-altering functions (e.g., only a tenant can pay rent, only a landlord can terminate a lease).
+- **Secure Fund Routing:** Utilizes `payable` functions to handle raw ETH/Wei securely, separating the security deposit escrow from the withdrawable rent treasury to prevent commingling of funds.
+- **Time-Locked Mechanics:** Integrates Solidity's global `block.timestamp` and native time units (`days`) to manage recurring payment schedules dynamically.
+- **Optimized Data Structures:** Uses highly efficient mappings and custom `structs` to handle property and tenant data, minimizing gas consumption during state updates.
 
-1. **Create Files & Folders**
-
-   - Add new Solidity files, scripts, or folders as needed for your project.
-   - You can organize your workspace structure in any way you like.
-
-2. **Setup Project Settings** (Optional)
-
-   - Modify `remix.config.json` or add additional configuration files as your project grows.
-
-3. **Write & Compile Smart Contracts**
-
-   - Use the **Solidity Compiler** and **Deploy & Run Transactions** plugins (available in Remix IDE's left sidebar) to develop and test your contracts.
-
-4. **(Optional) Initialize Git**
-
-   - If you checked "Initialize as a Git repository" during workspace creation, you can start committing your code immediately.
+## 💻 Tech Stack
+- **Language:** Solidity `^0.8.19`
+- **Environment:** Remix IDE
+- **Version Control:** Git / GitHub
 
 ---
-
-## Useful Resources
-
-- [Remix IDE Documentation](https://remix-ide.readthedocs.io/)
-- [Solidity Language Documentation](https://docs.soliditylang.org/)
-- [Remix IDE Community Forum](https://forum.remix.ethereum.org/)
-
----
-
-Happy coding! 🚀 
-
-_Remix IDE Team_
-
+*Developed by Katlego Sebona*
