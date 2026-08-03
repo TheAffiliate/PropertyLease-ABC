@@ -32,10 +32,8 @@ contract PropertyLease {
 
     // --- CONSTRUCTOR ---
     // 7. The constructor runs exactly once during contract deployment.
-    constructor() {
-        // msg.sender is a globally available variable in Solidity representing the address calling the function.
-        // Here, it sets whoever deploys the contract as the landlord.
-        owner = msg.sender; 
+   constructor(address _landlord) {
+        owner = _landlord;
     }
 
     // --- MODIFIERS ---

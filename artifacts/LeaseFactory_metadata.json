@@ -1,0 +1,109 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "createLeasePortfolio",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_landlord",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getPortfolio",
+				"outputs": [
+					{
+						"internalType": "contract PropertyLease",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "landlordPortfolios",
+				"outputs": [
+					{
+						"internalType": "contract PropertyLease",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/LeaseFactory.sol": "LeaseFactory"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/LeaseFactory.sol": {
+			"keccak256": "0x78da2a9327f0ecfacb9b6bf80b6043ee242a3a2e840bb42095e344d938d5dbac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ddc2e985ab7d3589fd7830dd3677be40be44d4eb9047d057f2f30dc4230ada66",
+				"dweb:/ipfs/Qmc1XT4W22jVDpcPgUJzfUyFha9w18WnKgATdK2EYotQXC"
+			]
+		},
+		"Contracts/PropertyLease.sol": {
+			"keccak256": "0xb121c2adfb953b741d89dd7f16831a5b262d0463d15cd16c2bedb3008cbfdf82",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a06e8b8b22b1b2d60c67cb57012f069e9d0057301a320721cfc026bee9ed8ee2",
+				"dweb:/ipfs/QmcqwMpYnPZBSMV6NX7TUPAEWeGWREh2ymV4efnksFqvGa"
+			]
+		}
+	},
+	"version": 1
+}

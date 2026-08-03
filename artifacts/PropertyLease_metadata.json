@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_landlord",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -58,6 +64,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -68,6 +93,32 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "payRent",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "paySecurityDeposit",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -108,6 +159,25 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "rentCollected",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -138,11 +208,11 @@
 	},
 	"sources": {
 		"Contracts/PropertyLease.sol": {
-			"keccak256": "0x8ae69a04112c2ba23642377f567a17e6b458015574d7b25a1d1c8f9702e53fc0",
+			"keccak256": "0xb121c2adfb953b741d89dd7f16831a5b262d0463d15cd16c2bedb3008cbfdf82",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://47215e1e9d3d400b7d28ec9d32e715ccbf97e314602095db0086741e31f69474",
-				"dweb:/ipfs/QmXD3Yrq7VxJFRpDHr87U1Ru26PyxyXVSCMEd48ZF8dn4E"
+				"bzz-raw://a06e8b8b22b1b2d60c67cb57012f069e9d0057301a320721cfc026bee9ed8ee2",
+				"dweb:/ipfs/QmcqwMpYnPZBSMV6NX7TUPAEWeGWREh2ymV4efnksFqvGa"
 			]
 		}
 	},
