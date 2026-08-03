@@ -110,4 +110,22 @@ contract PropertyLease {
         deposits[_propertyId] = msg.value;
     }
 
+    // 12. Track the total rent collected for each property so the landlord can withdraw it.
+    mapping(uint256 => uint256) public rentCollected;
+
+    // 13. Rent Payment: Allows the tenant to pay their monthly rent.
+    function payRent(uint256 _propertyId) public payable onlyTenant(_propertyId) {
+        Lease storage currentLease = propertyLeases[_propertyId];
+
+        // Safety Checks
+        require(currentLease.isActive, "Error: This lease is no longer active");
+        require(msg.value == currentLease.rentAmount, "Error: Must send the exact rent amount");
+        
+        // Update the payment due date by adding 30 days using Solidity's global time units
+        currentLease.nextPaymentDueDate += 30 days;
+
+        // Add the payment to the landlord's withdrawable balance for this property
+        rentCollected[_propertyId] += msg.value;
+    }
+
 }
