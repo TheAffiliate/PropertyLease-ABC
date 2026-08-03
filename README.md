@@ -25,9 +25,15 @@ The system is composed of two primary contracts:
 - **Time-Locked Mechanics:** Integrates Solidity's global `block.timestamp` and native time units (`days`) to manage recurring payment schedules dynamically.
 - **Optimized Data Structures:** Uses highly efficient mappings and custom `structs` to handle property and tenant data, minimizing gas consumption during state updates.
 
+## 🧪 Automated Testing & Quality Assurance
+
+The repository includes a comprehensive unit testing suite (`PropertyLease_test.sol`) built using Remix's Solidity unit testing framework to ensure contract robustness and correct state transitions:
+- **Initialization Checks:** Verifies correct deployment ownership and initial state assignments.
+- **Lease Lifecycle Validation:** Tests successful lease creation, modifier access controls, and deposit handling.
+
 ## 💻 Tech Stack
 - **Language:** Solidity `^0.8.19`
-- **Environment:** Remix IDE
+- **Environment & Testing:** Remix IDE & Solidity Unit Testing Plugin
 - **Version Control:** Git / GitHub
 
 ---

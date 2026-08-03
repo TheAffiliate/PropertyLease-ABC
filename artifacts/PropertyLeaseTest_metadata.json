@@ -1,0 +1,93 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "beforeEach",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testCreateLease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testInitialOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"beforeEach()": {
+					"notice": "#section: Lifecycle Runs before each test function is executed"
+				},
+				"testCreateLease()": {
+					"notice": "Test 2: Verify the landlord can successfully create a lease"
+				},
+				"testInitialOwner()": {
+					"notice": "#section: Tests Test 1: Verify the constructor assigns the correct owner"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/PropertyLease_test.sol": "PropertyLeaseTest"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/PropertyLease.sol": {
+			"keccak256": "0xb121c2adfb953b741d89dd7f16831a5b262d0463d15cd16c2bedb3008cbfdf82",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a06e8b8b22b1b2d60c67cb57012f069e9d0057301a320721cfc026bee9ed8ee2",
+				"dweb:/ipfs/QmcqwMpYnPZBSMV6NX7TUPAEWeGWREh2ymV4efnksFqvGa"
+			]
+		},
+		"Contracts/PropertyLease_test.sol": {
+			"keccak256": "0xbed4e293fdd1e7009b6a4649e4ea008b589197fda9d5abb4986ce945c90daa6e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77583a65e7c43ba212841c44bac747c643cf322743882dd68d9092c408d8aa8c",
+				"dweb:/ipfs/Qmbjj2uazPqxfzM2hj9FY7xy4BdYG8gY764GuBq77gngY1"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		}
+	},
+	"version": 1
+}
